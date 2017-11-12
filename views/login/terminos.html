@@ -1,0 +1,28 @@
+<md-dialog class="modalMediano" >
+    <h3 style="text-align:center ;  ">TERMINOS Y CONDICIONES</h3>
+
+
+    <md-dialog-content style="padding: 20px 15px;">
+
+        <div id="cuerpo" class="md-dialog-content" style="padding: 0px !important" >
+
+        <div ng-bind-html="terminos">
+            
+        </div>
+
+        </div>   
+
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+
+        <span flex></span>
+
+        <md-button ng-click="cerrar()">
+            Cerrar
+        </md-button>
+ 
+
+
+    </md-dialog-actions>
+</md-dialog>

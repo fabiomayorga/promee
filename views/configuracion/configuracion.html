@@ -1,0 +1,122 @@
+
+<div class="titulo" >
+	<h1 ng-model="user" class="tituloPrincipal visible fadeIn">Configuración</h1>
+</div>
+<section class="visible perfil" style="background-color:white;height:calc(100vh); display: inherit;width:100%;" >
+
+
+	<div ng-model="displayForm" id="cierpoInicio" class="" style="display: {{displayForm}};">
+
+
+
+
+
+		<div class="cuerpo" style="height: 100%;" >
+			<div class="seccionCuerpo" style="height: 100%;">
+				<md-content md-theme="formulario" style="margin-bottom:20px;" >
+
+
+					<div class="visible formularioRegistro" style="width: 50%;
+					margin-left: 25%;">
+
+					
+
+
+
+					<div class="visible rowEspecial">
+
+						<div class="visible col-sm-12 col-md-12 col-lg-12">
+
+							<div style="width: 300px;margin-left: calc(50% - 150px);padding-bottom: 0px; height: 300px; min-height: 300px;" class="imgContainer">
+								<img class="visible imgPerfil" src="{{profile.parentProperty.companyImg}}}" style="margin-bottom: 0 !important; width: 100%;max-height: 100%; min-height: 300px;">
+
+
+								<div class="textoCambiar" style="display: grid;" ng-click="modalLogotipo()">
+									<div style="height:60px;margin: auto;">
+										<div class="icoButton">
+											<i class="fa fa-picture-o  middleIcon " style="min-width:0px !important; float: left; margin-right: 7px; color:white;" aria-hidden="true"></i> 
+										</div>
+										<div class="icoButton" style="width: auto !important">
+											<p style="float: left; margin: auto; color:white;padding-left: 5px;">Cambiar logo</p>
+										</div>
+
+
+									</div>
+								</div>
+
+							</div>
+
+							<form name="formularioForm">
+
+
+								<div class="noVisible col-sm-12 col-md-12 col-lg-12" id="domain">
+									<md-input-container  class="visible animate">
+										<label>Nombre de dominio</label>
+										<input type="text" required name="name"  ng-model="formulario.domain_name" ng-maxlength="18" ng-pattern="/^[a-z]*$/" ng-change='validar()'>
+										<div ng-messages="formularioForm.name.$error">
+											<div ng-message="required">Este campo es requerido.</div>	
+											<div ng-message="pattern">El subdominio no debe contener números, caracteres especiales, espacios o mayusculas.</div>					
+											<div ng-message="maxlength">Máximo 18 caracteres</div>		
+										</div>
+									</md-input-container>
+								</div>
+
+
+								<div class="visible col-sm-12 col-md-12 col-lg-12">
+									<md-input-container  class="visible animate">
+										<label>Color primario</label>
+										<input colorpicker="rgba" required colorpicker-position="bottom" class="form-control" ng-model="formulario.primaryColor"  type="text" />
+										<div ng-messages="formularioForm.name.$error">
+											<div ng-message="required">Este campo es requerido.</div>																			
+										</div>
+									</md-input-container>
+								</div>
+
+
+								<div class="visible col-sm-12 col-md-12 col-lg-12">
+									<md-input-container  class="visible animate">
+										<label>Color Secundario</label>
+										<input colorpicker="rgba" required colorpicker-position="bottom" class="form-control" ng-model="formulario.secondaryColor"  type="text" />
+										<div ng-messages="formularioForm.name.$error">
+											<div ng-message="required">Este campo es requerido.</div>																			
+										</div>
+									</md-input-container>
+								</div>
+							</form>
+
+						</div>
+
+
+
+
+
+
+						<div style="text-align: center; ">
+
+							<md-button ng-click="guardarConfiguracion()" class="visible md-raised md-primary primaryAmate" ng-disabled="!formularioForm.$valid"  style="    text-transform: initial;    margin: auto; width: 200px;  background-color: rgb(124, 154, 0);  " >Guardar cambios</md-button>
+
+						</div>
+					</div>
+
+
+
+
+				</md-content>
+
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+
+
+	</div>
+
+</section>
+
+

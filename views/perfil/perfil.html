@@ -1,0 +1,186 @@
+
+<div class="titulo" >
+	<h1 ng-model="user" class="tituloPrincipal visible fadeIn">Perfil</h1>
+</div>
+<section class="visible perfil" style="background-color:white;height:calc(100vh); display: inherit;width:100%;" >
+
+
+	<div ng-model="displayForm" id="cierpoInicio" class="" style="display: {{displayForm}};">
+
+
+
+
+
+		<div class="cuerpo" style="height: 100%;" >
+			<div class="seccionCuerpo" style="height: 100%;">
+				<md-content md-theme="formulario" style="margin-bottom:20px;" >
+
+
+					<div class="visible formularioRegistro" style="width: 50%;
+					margin-left: 25%;">
+
+					<form name="formularioForm">
+						
+
+
+						<div class="visible rowEspecial">
+
+							<div class="visible col-sm-12 col-md-12 col-lg-12">
+
+								<div style="width: 300px;margin-left: calc(50% - 150px);padding-bottom: 0px; height: 300px;" class="imgContainer">
+									<img class="visible imgPerfil" src="{{profile.parentProperty.imgPerfil}}}" style="margin-bottom: 0 !important; width: 100%;max-height: 100%; min-height: 100%;">
+									
+
+									<div class="textoCambiar" style="display: grid;" ng-click="modalImg()">
+										<div style="height:60px;margin: auto;">
+											<div class="icoButton">
+												<i class="fa fa-picture-o  middleIcon " style="min-width:0px !important; float: left; margin-right: 7px; color:white;" aria-hidden="true"></i> 
+											</div>
+											<div class="icoButton" style="width: auto !important">
+												<p style="float: left; margin: auto; color:white;padding-left: 5px;">Cambiar foto</p>
+											</div>
+
+											
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="visible col-sm-12 col-md-12 col-lg-12">
+								<md-input-container  class="visible animate">
+									<label>Nombre</label>
+									<input type="text" required name="name" ng-pattern="/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/" ng-model="formulario.name" ng-change='validar()'>
+									<div ng-messages="formularioForm.name.$error">
+										<div ng-message="required">Este campo es requerido.</div>
+										<div ng-message="pattern">Este campo debe ser un nombre valido.</div>
+									</div>
+								</md-input-container>
+							</div>
+
+
+							<div class="visible col-sm-12 col-md-12 col-lg-12">
+								<md-input-container  class="visible animate">
+									<label>Telefono de contácto</label>
+									<input type="text" required name="phone"  ng-model="formulario.phone" ng-change='validarTelefono()'>
+									<div ng-messages="formularioForm.phone.$error">
+										<div ng-message="required">Este campo es requerido.</div>
+										<div ng-message="validarTel">Este campo debe contener al menos 6 caracteres.</div>
+									</div>
+								</md-input-container>
+							</div>
+
+							
+
+						</div>
+
+						
+
+					</form>
+
+					<div style="display: inline-block;width: 100%; margin-bottom: 15px;" id="divPassword" class="md-whiteframe-2dp">
+
+
+						
+
+						<div  ng-show="mostrarFormulario==true">
+
+							<form name="formPassword">
+
+								<md-input-container  class="">
+									<label>Ingrese la contraseña actual</label>
+									<input type="password" required name="actual" ng-model="formularioPassword.actual"   >
+									<div ng-messages="formPassword.actual.$error">
+										<div ng-message="required">Este campo es requerido.</div>
+
+
+									</div>
+								</md-input-container>
+
+								<md-input-container  class="">
+									<label>Nueva contraseña</label>
+									<input type="password" required name="password" ng-model="formularioPassword.password"  ng-change='validarPassword();validarCambio();' ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&.])([A-Za-z\d$@$!%*?&.]|[^ ]){8,15}$/" >
+									<div ng-messages="formPassword.password.$error">
+										<div ng-message="required">Este campo es requerido.</div>
+										<div ng-message="igual">La contraseña nueva debe ser distinta a la anterior.</div>
+										<div ng-message="pattern">	
+
+											- Minimo 8 caracteres y maximo 15.<br>
+											- Al menos una letra mayúscula.<br>
+											- Al menos una letra minucula.<br>
+											- Al menos un dígito.<br>
+											- No espacios en blanco.<br>
+											- Al menos 1 caracter especial.<br>
+
+										</div>
+									</div>
+								</md-input-container>
+
+								<md-input-container  class="">
+									<label>Confirmar contraseña nueva</label>
+									<input type="password" required name="password2" ng-model="formularioPassword.password2"  ng-change='validarPassword()'  >
+									<div ng-messages="formPassword.password2.$error">
+										<div ng-message="required">Este campo es requerido.</div>
+										<div ng-message="igual">Las contraseñas deben coincidir.</div>
+									</div>
+								</md-input-container>
+
+							</form>
+
+
+							<md-button  ng-click="cambiarPassword()" ng-disabled="!formPassword.$valid" class="" style="min-width:0px !important;     background: #ffa047; color:white; text-transform: none;">
+								<i class="fa fa-lock  middleIcon " style="min-width:0px !important; float: left; margin-right: 7px; color:white;" aria-hidden="true"></i> 
+								<p style="float: left; margin: auto;">Guardar contraseña</p>
+							</md-button>
+
+							<md-button  ng-click="cancelarPassword()" class="" style="min-width:0px !important; height: 36px;    background: rgb(221,44,0); color:white; text-transform: none;">
+
+								<div class="icoButton">
+									<i class="fa fa-times  middleIcon " style="min-width:0px !important; float: left; margin-right: 7px; color:white;" aria-hidden="true"></i> 
+								</div>
+
+								
+								<p style="float: left; margin: auto;">Cancelar cambio</p>
+							</md-button>
+
+						</div>
+
+					</div>
+
+
+
+					<div style="text-align: center; ">
+
+						<md-button ng-disabled="cambioActivo" ng-show="!cambioActivo" ng-click="mostrarCambioPassword()" class="" style="min-width:0px !important;   width:180px;  background: #ffa047; color:white; text-transform: none;">
+							<i class="fa fa-lock  middleIcon " style="min-width:0px !important; float: left; margin-right: 7px; color:white;" aria-hidden="true"></i> 
+							<p style="float: left; margin: auto;">Cambiar contraseña</p>
+						</md-button>
+
+						<md-button ng-click="guardarCambios()" class="visible md-raised md-primary primaryAmate" ng-disabled="!formularioForm.$valid"  style="    text-transform: initial;    margin: auto; width: 200px;  background-color: rgb(124, 154, 0);  " >Guardar cambios</md-button>
+
+					</div>
+				</div>
+
+
+
+
+			</md-content>
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+
+</div>
+
+</section>
+
+

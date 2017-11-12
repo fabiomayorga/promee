@@ -1,0 +1,12 @@
+#Habilitamos redirecciones
+RewriteEngine ON
+
+	#Si un directorio es solicitado y este existe, se dirige a el
+	
+	RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+	RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+	RewriteRule ^ - [L]
+
+	#Si el recurso solicitado no existe, se usa el index.html
+	RewriteRule ^ /index.html
+ 

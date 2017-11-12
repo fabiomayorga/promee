@@ -1,0 +1,71 @@
+
+
+<section style="background-color:white;height:calc(100vh); width: 100vw; display: inherit ;    min-width: 350px;" >
+
+	<div ng-model="displayForm" id="cierpoInicio" style="display: {{displayForm}};">
+
+
+
+		<div class="cuerpo" style="height: 100%;">
+
+			<div class="seccionCuerpo" style="height: 100%;background:  rgba(167, 176, 178, 0.1); display: grid;">
+
+				<div class="loginMarco" style="padding-bottom: 20px;     display: table; margin: auto;">
+
+					<div class="" style="" >
+						<img class="visible imagenLogoLogin" src="../public/img/ekosave-logo.png" >
+					</div>
+					<div class="formularioRegistro" style="    margin-left: 12.5% !important;
+					width: 75% !important;">
+					<md-input-container flex="100" class="col-sm-12 col-xl-12 col-md-12" style="margin-top: 31px !important;margin-bottom: 0px !important; width: 100vw;">
+						<label>Correo electronico</label>
+						<input type="text" required name="cliente" ng-model="formulario.envio.email">
+						<div ng-messages="formulario.nit.$error">
+							<div ng-message="required">Este campo es requerido.</div>
+						</div>
+					</md-input-container>
+
+					<md-input-container flex="100" class="col-sm-12 col-xl-12 col-md-12" style="margin-top: 0px !important; width: 100vw; margin-bottom: 0px;">
+						<label>Contraseña</label>
+						<input type="password" required name="razon" ng-model="formulario.envio.password">
+						<div ng-messages="formulario.razon.$error">
+							<div ng-message="required">Este campo es requerido.</div>
+						</div>
+
+
+					</md-input-container>			
+
+
+
+					<div style="">
+
+						<md-input-container flex="100" class="col-sm-12 col-xl-12 col-md-12" style="margin-top: 0px !important; width: 100vw; display: grid;">
+							<md-button ng-click="enviarDatosLogin()" class="md-raised md-primary primaryEkosave" style="    text-transform: initial;    margin-bottom: 20px; width: 80%; margin-left:10%; " >Ingresar</md-button>
+							<a ng-click="goRecuperar()" style="width: 100%; text-align: center;text-decoration: none;" href="../public/#/recuperar">¿Olvidaste tu contraseña?</a>
+						</md-input-container>			
+
+
+						
+
+
+
+
+						<div style="bottom: 20px;  " class="footNav">
+							<img style="width:50%; margin-left: 25%; " src="../public/img/powered-leadis-gris.png">
+						</div>
+
+
+					</div>
+				</div>
+
+			</div>
+
+
+
+		</div>
+
+	</div> 
+
+</div>  
+
+</section>
