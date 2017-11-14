@@ -1,0 +1,112 @@
+body{
+	overflow-x: hidden;
+}
+
+md-sidenav{
+	width:400px;
+}
+
+#map {
+	height: 100%;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* css para moviles */
+
+@media (max-width: 600px) {
+	.searchboxContainer{
+		width: calc(100% - 16px) !important;
+		margin: 8px !important;
+	}
+}
+/*fin css para moviles*/
+
+.searchboxContainer{
+	width: 550px;
+	height:48px;
+	display: inline-block;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
+	transition-property: background,box-shadow;
+	transition-duration: 0.3s;
+	background: #fff;
+	border-radius: 2px;
+	position: absolute;
+	z-index: 1;
+	margin-top: 8px;
+	margin-left: calc(50% - 255px);
+
+}
+
+
+
+.searchButtonContainer{
+	height: 48px;
+	display: grid;
+	width: 54px;
+	float: left;
+}
+
+.search::after{
+	content: "";
+	position: absolute;
+	top: 10px;
+	border-left: 1px solid #ddd;
+	height: 28px;
+}
+
+
+.searchButton{
+	display: grid;
+	margin: auto !important;
+	border-radius: 0% !important;
+}
+
+.searchInput{
+	width: calc(100% - 162px);
+	height: 48px;
+	float: left;
+	position: relative;
+	display: grid;
+}
+
+.searchInput input, input:focus{
+	border:0px !important;
+	outline: none;
+	width: 100%;
+}
+
+md-content{
+	
+}
+
+.appContent{
+	width: 100%;
+	height: 100%;
+}
+
+.appContent,section{
+	width: 100%;
+	height: 100%;
+}
+
+/* do not group these rules */
+*::-webkit-input-placeholder {
+	color: grainsboro;
+}
+*:-moz-placeholder {
+	/* FF 4-18 */
+	color: grainsboro;
+}
+*::-moz-placeholder {
+	/* FF 19+ */
+	color: grainsboro;
+}
+*:-ms-input-placeholder {
+	/* IE 10+ */
+	color: grainsboro;
+}

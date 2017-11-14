@@ -8,5 +8,5 @@ RewriteEngine ON
 	RewriteRule ^ - [L]
 
 	#Si el recurso solicitado no existe, se usa el index.html
-	RewriteRule ^ /index.html
+	RewriteRule ^ /promee/index.html
  
