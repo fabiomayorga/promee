@@ -2,7 +2,7 @@
 <html lang="ng-app" ng-app="promeeApp">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<base href="/promee/" />
+	<base href="/" />
 	
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="css/fonts/fontAwsome/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+	<link rel="stylesheet" href="components/angularMaterial/angularMaterial.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	
@@ -38,7 +38,7 @@
 
 	<!-- Angular Material Library -->
 
-	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+	<script type="text/javascript" src="components/angularMaterial/angularMaterial.js"></script>
 
 	<!--Angular modulo principal -->
 
@@ -51,16 +51,21 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-morris/1.3.0/angular-morris.min.js"></script>
 	<script src="js/componentesJS/md-data-table.min.js"></script>
 
-	
+	<!--Slider double-->
+	<script src="components/angularjs-slider/angularjs-slider.js"></script>
+	<link rel="stylesheet" type="text/css" href="components/angularjs-slider/angularjs-slider.css">
+
 	<!-- Controladores -->
 
 	<script type="text/javascript" src="js/AngularJS/controllers/maps/map.js"></script>
+	<script type="text/javascript" src="js/AngularJS/controllers/searchNav/searchNav.js"></script>
 
 
 	<!-- factory -->
 
 	<script type="text/javascript" src="js/AngularJS/factories/access/accessFactory.js"></script>
 	<script type="text/javascript" src="js/AngularJS/factories/tools/toolsFactory.js"></script>
+	<script type="text/javascript" src="js/AngularJS/factories/results/resultsFactory.js"></script>
 	
 	<!-- trix Editor  -->
 
@@ -72,109 +77,13 @@
 
 
 
-
 </head>
 
 <body ng-controller="mainController">
 	
-
-	<div class="appContent" ng-cloak>
-
-		<section layout="row" flex>
-
-			<div id="searchbox" class="searchboxContainer ">
-
-				<div class="searchButtonContainer">
-					<md-button class="md-icon-button searchButton" aria-label="Eat cake">
-						<i class="material-icons">menu</i>
-						<md-tooltip md-direction="bottom">
-							Menú
-						</md-tooltip>
-					</md-button>	
-				</div>
-
-				<div class="searchInput">
-					<input type="text" name="searchMain" ng-focus="focus=true" ng-blur="focus=false" placeholder="Busca {{categorias[0]}}, {{categorias[1]}} o cualquier cosa :)">
-				</div>
-
-				<div class="searchButtonContainer">
-					<md-button class="md-icon-button searchButton" aria-label="Eat cake" ng-click="toggleLeft()">
-						<i class="material-icons">search</i>
-						<md-tooltip md-direction="bottom">
-							Buscar
-						</md-tooltip>
-					</md-button>	
-				</div>
-
-				<div class="searchButtonContainer search">
-					<md-button class="md-icon-button searchButton" aria-label="Eat cake" ng-click="toggleRight()">
-						<i class="material-icons">loyalty</i>
-						<md-tooltip md-direction="bottom">
-							Lo más buscados
-						</md-tooltip>
-					</md-button>	
-				</div>
-
-			</div>
-
-			<md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
-
-				<md-toolbar class="md-theme-indigo">
-
-				</md-toolbar>
-
-				<md-content layout-margin>
-					<p>
-						This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
-					</p>
-					<md-button ng-click="toggleLeft()" class="md-accent">
-						Close this Sidenav
-					</md-button>
-				</md-content>
-
-			</md-sidenav>
-
-
-
-			<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
-
-				<md-toolbar class="md-theme-light">
-					<h1 class="md-toolbar-tools">Sidenav Right</h1>
-				</md-toolbar>
-				<md-content  layout-padding>
-					<form>
-						<md-input-container>
-							<label for="testInput">Test input</label>
-							<input type="text" id="testInput" ng-model="search"  md-autofocus>
-						</md-input-container>
-					</form>
-					<md-button ng-click="close()" class="md-primary">
-						Close Sidenav Right
-					</md-button>
-
-					<div layout="column" id="toast-container" ng-model="cuerpos"  layout-align="top center" ng-view="" class="vista">
-
-					</div>
-
-				</md-content>
-
-			</md-sidenav>
-
-
-			<md-content flex>
-
-				<div id="map"></div>
-
-			</md-content>
-
-		</section>
-
+	<div layout="column" id="toast-container" ng-model="cuerpos"  layout-align="top center" ng-view="" class="vista">
+		
 	</div>
-
-
-
-
-
 
 </body>
 
