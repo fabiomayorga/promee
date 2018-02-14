@@ -1,0 +1,9 @@
+[14-Feb-2018 05:55:20 America/Bogota] PHP Notice:  Undefined index: nombre in /home/binaryho/promee.binaryhouse.co/alexa/modules/admin/controllers/usuarioController.php on line 30
+[14-Feb-2018 05:55:20 America/Bogota] PHP Notice:  Undefined index: correo in /home/binaryho/promee.binaryhouse.co/alexa/modules/admin/controllers/usuarioController.php on line 31
+[14-Feb-2018 05:55:20 America/Bogota] PHP Notice:  Undefined index: telefono in /home/binaryho/promee.binaryhouse.co/alexa/modules/admin/controllers/usuarioController.php on line 32
+[14-Feb-2018 06:23:43 America/Bogota] PHP Notice:  Undefined index: nombre in /home/binaryho/promee.binaryhouse.co/alexa/modules/admin/controllers/usuarioController.php on line 31
+[14-Feb-2018 06:23:43 America/Bogota] PHP Notice:  Undefined index: correo in /home/binaryho/promee.binaryhouse.co/alexa/modules/admin/controllers/usuarioController.php on line 32
+[14-Feb-2018 06:23:43 America/Bogota] PHP Notice:  Undefined index: telefono in /home/binaryho/promee.binaryhouse.co/alexa/modules/admin/controllers/usuarioController.php on line 33
+[14-Feb-2018 06:40:00 America/Bogota] PHP Notice:  Undefined variable: usuairo in /home/binaryho/promee.binaryhouse.co/alexa/modules/admin/controllers/usuarioController.php on line 171
+[14-Feb-2018 06:40:12 America/Bogota] PHP Notice:  Undefined variable: usuairo in /home/binaryho/promee.binaryhouse.co/alexa/modules/admin/controllers/usuarioController.php on line 171
+[14-Feb-2018 06:40:14 America/Bogota] PHP Notice:  Undefined variable: usuairo in /home/binaryho/promee.binaryhouse.co/alexa/modules/admin/controllers/usuarioController.php on line 171

@@ -1,0 +1,25 @@
+<?php
+
+/*
+ * -------------------------------------
+ * www.dlancedu.com | Jaisiel Delance
+ * framework mvc basico
+ * Database.php
+ * -------------------------------------
+ */
+
+class Database extends PDO {
+
+    public function __construct() {
+        parent::__construct(
+                'mysql:host=' . DB_HOST .
+//                ';port=' . DB_PORT .
+                ';dbname=' . DB_NAME, DB_USER, DB_PASS, array(
+            //PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES ' . DB_CHAR
+            PDO::ATTR_PERSISTENT => TRUE
+        ));
+    }
+
+}
+
+?>
